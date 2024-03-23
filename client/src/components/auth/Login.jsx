@@ -24,6 +24,7 @@ function LoginForm() {
     try {
       const res = await axios.post(`${baseURL}/login`,formData);
       console.log(res?.data);
+      localStorage.setItem("userInfo",JSON.stringify(res?.data));
       if(res?.data?.category ==="admin"){
         console.log("Working");
         navigate("/dashboard/admin");

@@ -26,6 +26,7 @@ function SignupForm() {
     try {
       const res = await axios.post(`${baseURL}/register`,formData);
       console.log(res?.data);
+      localStorage.setItem("userInfo",JSON.stringify(res?.data));
     } catch (error) {
       console.log(error);
     }

@@ -16,7 +16,7 @@ try {
                 name,email,password:hash,category
             });
             const newUser = await user.save();
-            res.status(200).send({id:newUser?._id,category:newUser?.category});
+            res.status(200).send({id:currUser?._id,category:currUser?.category,name:currUser?.name});
         } catch (error) {
             res.status(501).send(error);
         }

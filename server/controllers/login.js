@@ -10,7 +10,7 @@ try {
         
         const isCorrectPassword = await bcrypt.compare(password,currUser.password);
         if(isCorrectPassword){
-        res.status(200).send({id:currUser?._id,category:currUser?.category});
+        res.status(200).send({id:currUser?._id,category:currUser?.category,name:currUser?.name});
         }else{
             res.status(401).send("Invalid username or password");
         }
